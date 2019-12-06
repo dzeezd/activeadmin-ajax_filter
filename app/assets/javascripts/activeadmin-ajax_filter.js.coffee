@@ -63,7 +63,7 @@ $ ->
               else
                 klass = 'secondary'
 
-              "<span class='#{klass}'>#{value}</span>"
+              "<span class='#{klass}'>#{value}</span>" unless value == 'undefined'
 
             "<div class='item'>#{html.join('')}</div>"
 
