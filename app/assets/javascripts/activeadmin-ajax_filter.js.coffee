@@ -55,7 +55,13 @@ $ ->
         create: false
         render:
           option: (item, escape) ->
-            html = unique(display_fields.concat(searchFields)).map (field, index)->
+            outputFields = []
+            if display_fields.length > 0
+              outputFields = display_fields
+            else
+              outputFields = searchFields
+            
+            html = outputFields.map (field, index)->
               value = escape(item[field])
 
               if index == 0
